@@ -26,7 +26,7 @@ o = ephem.Observer()
 o.lat = '-26.70331940'
 o.lon = '116.67081524'
 o.elevation = 377.8269
-min_elevation = 90 - 45
+min_obs_angle = 90 - 45
 
 current_time = datetime.datetime.now(datetime.timezone.utc).replace(minute=0, second=0)
 
@@ -60,5 +60,5 @@ while current_time.year < next_year:
 	s_m_diff = abs(malt - salt)
 	sg_m_diff = abs(malt - sgalt)
 	
-	if malt >= min_elevation and s_m_diff > 20 and sg_m_diff > 20:
+	if malt >= min_obs_angle and s_m_diff > 20 and sg_m_diff > 20:
 		print("%s\t%4.1f\t%5.1f\t%4.1f\t%5.1f\t%4.1f\t%5.1f" % (current_time.strftime("%Y-%m-%d %H:%M"), malt, maz, salt, saz, sgalt, sgaz))
