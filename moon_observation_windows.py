@@ -43,7 +43,7 @@ sg._ra = eq.ra
 sg._dec = eq.dec
 sg._epoch = eq.epoch
 
-print("Time\tMoon Alt\tMoon Az\tSun Alt\tSun Az\tSG Alt\tSG Az")
+print("UTC\tMoon Alt\tMoon Az\tSun Alt\tSun Az\tSG Alt\tSG Az")
 while current_time.year < next_year:
 	current_time += datetime.timedelta(hours=1)
 	o.date = current_time
