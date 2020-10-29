@@ -43,6 +43,7 @@ sg._ra = eq.ra
 sg._dec = eq.dec
 sg._epoch = eq.epoch
 
+print("Time\tMoon Alt\tMoon Az\tSun Alt\tSun Az\tSG Alt\tSG Az")
 while current_time.year < next_year:
 	current_time += datetime.timedelta(hours=1)
 	o.date = current_time
@@ -60,4 +61,4 @@ while current_time.year < next_year:
 	sg_m_diff = abs(malt - sgalt)
 	
 	if malt >= min_elevation and s_m_diff > 20 and sg_m_diff > 20:
-		print("Time: %s Moon Alt: %4.1f Moon Az: %5.1f Sun Alt: %4.1f Sun Az: %5.1f SG Alt: %4.1f SG Az: %5.1f" % (current_time.strftime("%Y-%m-%d %H:%M"), malt, maz, salt, saz, sgalt, sgaz))
+		print("%s\t%4.1f\t%5.1f\t%4.1f\t%5.1f\t%4.1f\t%5.1f" % (current_time.strftime("%Y-%m-%d %H:%M"), malt, maz, salt, saz, sgalt, sgaz))
